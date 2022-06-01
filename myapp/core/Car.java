@@ -10,7 +10,6 @@ public class Car {
     private String make;
     private Integer engineCapacity;
     private Boolean started = false;
-    private long startedSince;
 
     // Need to define a method to 1) Get the properties and 2) Set the properties
     // Also commonly known as "getters" & "setters"
@@ -50,7 +49,6 @@ public class Car {
         } else {
             this.started = true;
             System.out.println("Vrooommmmmmm\n");
-            this.startedSince = System.currentTimeMillis();
         }
     }
 
@@ -60,14 +58,7 @@ public class Car {
         } else {
             this.started = false;
             System.out.println("Car has stopped\n");
-            
+
         }
     }
-
-    // public Integer getDrivingDuration() {
-    //     if (this.isStarted()) {
-    //         // Convert ms to sec
-    //         return 
-    //     }
-    // }
 }
