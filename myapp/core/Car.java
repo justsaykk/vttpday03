@@ -3,7 +3,7 @@ package myapp.core;
 /**
  * Car
  */
-public class Car {
+public class Car implements Controllable {
 
     // Properties of the class
     private String color;

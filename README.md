@@ -53,3 +53,5 @@ public String stop() {
     // Some code here //
     }
 ```
+
+## Interfaces
