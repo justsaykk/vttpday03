@@ -11,14 +11,17 @@ public class FixedDepositAccount extends BankAccount {
 
     // Constructors
     public FixedDepositAccount(String name, Float balance) {
+        super(name, balance);
     };
 
     public FixedDepositAccount(String name, Float balance, Float interest) {
+        super(name, balance);
         this.interest = interest;
     };
 
     public FixedDepositAccount(String name, Float balance, Float interest, Integer duration) {
-        this(name, balance, interest);
+        super(name, balance);
+        this.interest = interest;
         this.duration = duration;
     }
 
@@ -32,10 +35,12 @@ public class FixedDepositAccount extends BankAccount {
         return;
     };
 
+    @Override
     public Float getAccountBalance() {
-        Float currentBalance = super.getAccountBalance() + interest;
-        System.out.printf("The current balance is %f", currentBalance);
+        Float currentBalance = (super.getAccountBalance() + interest);
+        System.out.printf("super.getName() is: %s \n", super.getName()); // returns with null
+        System.out.printf("super.getAccountBalance is: %f \n", super.getAccountBalance()); // returns with null
+        System.out.printf("The current balance is %f \n", currentBalance);
         return currentBalance;
     }
-
 }

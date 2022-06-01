@@ -29,11 +29,12 @@ public class BankAccount {
     }
 
     public Float getAccountBalance() {
+        System.out.printf("Account Balance: %f \n", accountBalance);
         return accountBalance;
     }
 
-    public void setAccountBalance(Float accountBalance) {
-        this.accountBalance = accountBalance;
+    public void setAccountBalance(Float initialBalance) {
+        this.accountBalance = initialBalance;
     }
 
     public List<String> getTransactions() {
@@ -73,12 +74,10 @@ public class BankAccount {
 
     public BankAccount(String name) {
         this.accountName = name;
-        // this.accountNumber = Double.toString((Math.floor(Math.random() * 1001)));
     }
 
     public BankAccount(String name, Float initialAccountBalance) {
         this.accountName = name;
-        // this.accountNumber = Double.toString((Math.floor(Math.random() * 1001)));
         this.accountBalance = initialAccountBalance;
     }
 
