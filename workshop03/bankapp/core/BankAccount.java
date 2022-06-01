@@ -1,23 +1,23 @@
 package bankapp.core;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * BankAccount
  */
 public class BankAccount {
 
-    private static final String LocalDateTime = null;
     // Members
     private String accountName;
-    private String accountNumber = Double.toString((Math.floor(Math.random() * 1001)));
-    private Float accountBalance;
+    private String accountNumber = UUID.randomUUID().toString().substring(0, 8);
+    private Float accountBalance = 0f;
     private List<String> transactions = new ArrayList<>();
     private Boolean isClosed = false;
-    private LocalDate creationDate;
-    private LocalDate closingDate;
+    private Date creationDate;
+    private Date closingDate;
 
     // Setter and Getters
     public String getName() {
@@ -37,6 +37,7 @@ public class BankAccount {
     }
 
     public List<String> getTransactions() {
+        System.out.print(transactions);
         return transactions;
     }
 
@@ -48,29 +49,31 @@ public class BankAccount {
         this.isClosed = isClosed;
     }
 
-    public LocalDate getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
-    public LocalDate getClosingDate() {
+    public Date getClosingDate() {
         return closingDate;
     }
 
-    public void setClosingDate(LocalDate closingDate) {
+    public void setClosingDate(Date closingDate) {
         this.closingDate = closingDate;
     }
 
     // Random Number Generator
 
     // Constructors
+    public BankAccount() {
+    }; // Constructor for class extensions
+
     public BankAccount(String name) {
         this.accountName = name;
         // this.accountNumber = Double.toString((Math.floor(Math.random() * 1001)));
-        this.accountBalance = 0f;
     }
 
     public BankAccount(String name, Float initialAccountBalance) {
@@ -86,7 +89,8 @@ public class BankAccount {
         if (amount < 0 || isClosed) {
             System.out.println("IllegalArgumentException\n");
         } else {
-            transactions.add("deposited $" + amountString + " at " + LocalDateTime);
+            Date now = new Date();
+            transactions.add("deposited $" + amountString + " at " + now);
             System.out.printf("You have deposited $%d \n", amount);
         }
     }
@@ -96,7 +100,8 @@ public class BankAccount {
         if (amount < 0 || isClosed) {
             System.out.println("IllegalArgumentException\n");
         } else {
-            transactions.add("withdrew $" + amountString + " at " + LocalDateTime);
+            Date now = new Date();
+            transactions.add("withdrew $" + amountString + " at " + now);
             System.out.printf("You have withdrew $%d\n", amount);
         }
     }
