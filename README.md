@@ -1,10 +1,10 @@
 # What is the relationship between classes and objects?
 
-## What are classes
+### What are classes?
 
 Simply put, a class is just a template from which all objects of that class, follows.
 
-## What are objects?
+### What are objects?
 
 Objects are stuff that was derived based on a template (class).
 
@@ -13,7 +13,8 @@ Objects are stuff that was derived based on a template (class).
 Classes are templates from which objects are created.
 
 > What if I want something different for objects that I create?
-> Thats where we get to "Constructors"
+
+Thats where we get to "Constructors"
 
 ## Constructors
 
