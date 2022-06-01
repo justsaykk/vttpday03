@@ -19,5 +19,11 @@ public class Main {
         myOtherCar.setMake("Mustang");
         myOtherCar.setEngineCapacity(4000);
         myOtherCar.stop();
+
+        // Creating a Honda
+        Honda civic = new Honda();
+        System.out.printf("Make of car: %s", civic.getMake());
+        civic.accelerate();
+        civic.stop();
     }
 }
