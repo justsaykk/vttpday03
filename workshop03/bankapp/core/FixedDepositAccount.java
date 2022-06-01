@@ -11,6 +11,11 @@ public class FixedDepositAccount extends BankAccount {
 
     // Constructors
     public FixedDepositAccount(String name, Float balance) {
+        /*
+         * Need to add the super() here because the parent class has its own
+         * constructor. This means JVM will not have its default constructor working.
+         * Therefore, need to trigger the correct constructor route.
+         */
         super(name, balance);
     };
 
