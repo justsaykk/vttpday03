@@ -37,21 +37,32 @@ Consists of these 3 parts:
 That being said these 3 are different methods:
 
 ```java
-public void stop() {
+public void stop() {  // <-- Notice, no params
     // Some code here //
 }
 ```
 
 ```java
-public void stop(Integer time) {
+public void stop(Integer time) { // <-- Notice, params
     // Some code here //
     }
 ```
 
 ```java
-public String stop() {
+public String stop() { // <-- Notice, different return type
     // Some code here //
     }
 ```
 
-## Interfaces
+## Working with Classes
+
+There are some seemingly random words when you're declaring a class.
+Here are some of the words and what they mean:
+
+| keyword | Meaning                                                                                                             |
+| ------- | ------------------------------------------------------------------------------------------------------------------- |
+| public  | Everyone can access this class/method                                                                               |
+| private | Not everyone can access this class/method. This will generate a need for "getters" and "setters".                   |
+| static  | This member is a class member and is shared across all objects/instance                                             |
+| final   | The variable value cannot be changed. If the "final" keyword is used, when constructing, the value must be provided |
+| void    | Return type. This states the expected output of the method.                                                         |
